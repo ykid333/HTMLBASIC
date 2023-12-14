@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 선택자 { 속성:속성값; } */
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td, th{
+            border: 1px solid black;
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex01.html</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td> <span id="prcount"></span> 종류</td>
+                <td colspan=2 > 총액 <span id="totalPrice"></span> 원</td>
+            </tr>
+        </tfoot>
+    </table>
+
+        <hr>
+    이름 : <input type="text" id="prname">
+    <br>
+    가격 : <input type="text" id="prprice">
+    <br>
+    <button onclick="addProduct()">상품추가</button>
+
+    <script>
+        let prnum = 1; // 상품번호
+
+        function addProduct(){
+            // 실행되는 부분
+            console.log("addProduct() 호출");
+            // 상품이름이 입력되는 input태그 선택
+            let prEl = document.querySelector('#prname');
+            console.log(prEl)
+            console.log(prEl.value) // input태그의 value속성
+            // 상품가격이 입력되는 input태그 선택
+            let priceEl = document.querySelector('#prprice');
+            console.log(priceEl.value);
+            // tr 태그와 td 태그를 생성
+            let trEl = document.createElement('tr')      // <tr></tr>
+
+            let tdNumEl = document.createElement('td')   // <td></td>
+            tdNumEl.innerText = prnum;                   // <td>1</td>
+            trEl.appendChild(tdNumEl);                   // <tr>
+                                                         //    <td>1</td>
+                                                         // </tr>
+
+            let tdNameEl = document.createElement('td')  // <td></td>
+            tdNameEl.innerText = prEl.value;             // <td>마우스</td>
+            trEl.appendChild(tdNameEl);                  // <tr>
+                                                         //    <td>1</td>
+                                                         //    <td>마우스</td>
+                                                         // </tr>
+
+            let tdpriceEl = document.createElement('td') // <td></td>
+            tdpriceEl.innerText = priceEl.value;         // <td>10000</td>
+            trEl.appendChild(tdpriceEl);                 // <tr>
+                                                         //    <td>1</td>
+                                                         //    <td>마우스</td>
+                                                         //    <td>10000</td>
+                                                         // </tr>
+            //생성된 tr태그를 tbody태그 안쪽에 추가    
+            document.querySelector('tbody').appendChild(trEl);
+            
+            // 상품번호 증가
+            prnum++;
+            // 입력태그 초기화
+            prEl.value = "";
+            priceEl.value = "";
+
+            document.querySelector("#prcount").innerText
+             = document.querySelectorAll('tbody tr').length;
+            
+            let priceEls = document.querySelectorAll('tbody tr td:nth-child(3)') 
+            let totalPrice = 0;
+            for(let price of priceEls){
+                totalPrice += Number(price.innerText); 
+            }
+            document.querySelector("#totalPrice").innerText
+             = totalPrice;
+
+        } 
+       
+    </script>
+</body>
+</html>
