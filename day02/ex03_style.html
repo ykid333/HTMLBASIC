@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. 요소(Element)선택 2. 스타일속성:값; 지정 */
+        /* 태그선택자(selector) */
+        h1{
+            background-color: bisque;
+        }
+        /* 아이디선택자 */
+        #id01{
+            color: red;
+        }
+        /* 클래스선택자 */
+        .fontBlue{
+            color: blue;
+        }
+        .fontRed{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="id01" >ex03_style.html</h1>
+    <h1 id="id02">스타일 속성</h1>
+    <h2 class="fontBlue">클래스 <span class="fontRed">속성</span></h2>
+    <h2 class="fontBlue">클래스 속성</h2>
+    <p class="fontRed">p 태그 </p> 
+</body>
+<script>
+    document.getElementById('id01').innerText="텍스트 수정!";
+
+</script>
+</html>
