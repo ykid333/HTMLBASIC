@@ -26,10 +26,12 @@
 <body>
     <h1 id="id01" >ex03_style.html</h1>
     <h1 id="id02">스타일 속성</h1>
-    <h2 class="fontBlue">클래스 <span class="fontRed">속성</span></h2>
+    <h2 class="fontBlue" onclick="objClick(this)">클래스 <span class="fontRed">속성</span></h2>
     <h2 class="fontBlue">클래스 속성</h2>
-    <p class="fontRed">p 태그 </p> 
+    <p class="fontRed" onclick="objClick(this)">p 태그 </p> 
 </body>
+
+<script src="day02.js"></script>
 <script>
     document.getElementById('id01').innerText="텍스트 수정!";
 
