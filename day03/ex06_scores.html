@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th , td{
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex06_scores.html</h1>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">성적계산기</th>
+            </tr>
+            <tr>
+                <th style="width:150px;">과목명</th>
+                <th style="width:70px;">점수</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th colspan="2" id="result">
+                    총점:0점, 평균 0점
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+    <input type="text" id="subject" name="sub" placeholder="과목명" style="width: 100px;">
+    <input type="text" id="score"  placeholder="점수" style="width: 100px;">
+    <button onclick="addScores()">입력</button>
+    <script>
+      
+        const subjectEl = document.getElementById('subject');
+        const scoreEl = document.getElementById('score');
+        const tbodyEl = document.getElementById('tbody');
+
+        let scores = [];// 점수를 저장할 배열
+        function addScores(){
+            console.log('addScores() 호출');
+            let inputSubject = subjectEl.value; // 입력한 과목명
+            let inputScore =  Number( scoreEl.value ); // 입력한 성적
+
+            scores.push(inputScore);
+            let sum = 0;
+            for(let sc of scores){
+                sum += sc;
+            }
+            let avg = sum / scores.length;
+            document.getElementById('result').innerText 
+                 = '총점은 '+sum+'점, 평균은 '+avg+'점 ';
+
+            let trEl = document.createElement('tr');     // <tr></tr>
+
+            let tdEl_sub = document.createElement('td'); // <td></td>
+            tdEl_sub.innerText = inputSubject; // <td> HTML </td>
+            trEl.appendChild(tdEl_sub); // <tr> <td> HTML </td> </tr>
+
+            let tdEl_sc = document.createElement('td'); // <td></td>
+            tdEl_sc.innerText = inputScore;// <td> 80 </td>
+            trEl.appendChild(tdEl_sc);// <tr> <td> HTML </td> <td> 80 </td> </tr>
+            
+            tbodyEl.appendChild(trEl);
+
+            scoreEl.value = ""; // 입력태그 value 초기화
+            subjectEl.value = "";   // 입력태그 value 초기화
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex04_Array.html</h1>
+
+    <script>
+        let members = [];
+        members[0] = '양기두';
+        members[1] = '1986';
+        members[2] = '05';
+        members[3] = true;
+
+        console.log(members.length);
+        for(let i = 0; i < members.length; i++){
+            console.log(members[i])
+        }
+
+        for(let mem of members){
+            console.log("mem : " + mem)
+        }
+
+        members.push('추가1');
+        for(let mem of members){
+            console.log("mem : " + mem)
+        }
+        console.log("");
+        console.log('pop & shift')
+        console.log("members.length : " + members.length);
+        // '양기두' , '1986', '05', true, '추가1'
+        console.log('members.pop() : ' + members.pop());
+        // '양기두' , '1986', '05', true
+        console.log("members.length : " + members.length);
+
+        console.log('members.shift() : ' +members.shift());
+        //  '1986', '05', true
+        console.log("members.length : " + members.length);
+
+        console.log(members.indexOf(true));    // 2
+        console.log(members.indexOf('양기두'))  // -1
+        //  '1986', '05', true
+        console.log(members.includes('양기두')) // false
+
+        let numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+        console.log("numbers.length : " + numbers.length);
+
+        let idx = numbers.indexOf(5);
+        numbers.splice(idx, 1);
+        //let subNumbers = numbers.splice(3, 2);
+        for(let num of numbers ){
+            console.log('num : ' + num);
+        }
+    </script>
+
+
+    <script>
+        let switchVal = 'B';
+        switch(switchVal){
+            case 'A':
+                //console.log('A입니다.')
+                break;
+            case 'B':
+               // console.log('B입니다.')
+                break;
+        }
+    </script>
+
+</body>
+</html>

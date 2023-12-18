@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td{
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex05_Array.html</h1>
+    <table>
+        <tr>
+            <th colspan="2">성적계산기</th>
+        </tr>
+        <tr>
+            <th>성적입력</th>
+            <td> <input type="text" id="inputScore"
+                  placeholder="0~100 사이의 점수입력"> 
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button onclick="addScores()">입력</button> 
+                <button onclick="printScores()">출력</button> 
+                <button onclick="sumScores()">총합</button> 
+                <button onclick="avgScores()">평균</button> 
+            </th>
+        </tr>
+        <tr>
+            <th colspan="2" id="result">
+                결과를 출력할 부분
+            </th>
+        </tr>
+    </table>
+    
+    <script>
+        let scores = []; // 점수들을 저장할 배열
+        const inputEl = document.querySelector('#inputScore');
+        const resultEl = document.querySelector('#result');
+        function addScores(){
+            console.log('addScores() 호출');
+            //1. scores 배열에 점수를 저장하는 기능
+            console.log( '입력된 점수 : ' + inputEl.value );
+            let inputScore = Number( inputEl.value );
+            // Number( 'a' ) >> NaN
+            console.log(inputScore);
+            if(isNaN( inputScore )){
+                resultEl.innerText = '숫자만 입력 해주세요!';
+                return;
+            }
+            scores.push( inputScore );
+            //2. '??점이 입력 되었습니다' 출력
+            resultEl.innerText = inputEl.value+"점이 입력되었습니다.";
+            console.log(inputEl.value+"점이 입력되었습니다.")
+        }
+
+        function printScores(){
+            console.log('printScores() 호출');
+            // 현재까지 입력된 점수를 출력
+            let text = "";
+            // for(let i = 0; i < scores.length; i++){
+            //     text += scores[i] + " ";
+            // }
+
+            for(let sc of scores){
+                text += sc+" ";
+            }
+            resultEl.innerText = text;
+        }
+        function sumScores(){
+            console.log('sumScores() 호출');
+            let sum = 0;
+            for(let sc of scores){
+                sum += sc;
+            }
+            console.log(sum);
+            resultEl.innerText = "총합은 " + sum+"점 입니다."
+        }
+        function avgScores(){
+            console.log('sumScores() 호출');
+            let sum = 0;
+            for(let sc of scores){
+                sum += sc;
+            }
+            console.log(sum);
+            resultEl.innerText = "평균은 " + (sum / scores.length)+"점 입니다."
+        }        
+    </script>
+</body>
+</html>

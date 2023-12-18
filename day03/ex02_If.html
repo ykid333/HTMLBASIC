@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex02_if.html</h1>
+    <input type="number" id="inputNumber" onchange="checkNumber()">
+    <h2 id="result">결과값 표시할 부분</h2>
+
+    <script>
+        let number = 20; // 판별 기준될 값
+        // 판별 결과를 출력할 태그 선택
+        const resultEl = document.getElementById('result');
+
+        function checkNumber(){
+            // 1-1 문서에 있는 input 태그
+            let inputEl = document.getElementById('inputNumber');
+            console.log('입력된 숫자값 : ' + inputEl.value);
+            console.log( number > inputEl.value );
+            if(number > inputEl.value){
+                resultEl.innerText = '입력된 값이 20보다 작습니다';
+            } else if(number < inputEl.value)  {
+                resultEl.innerText = '입력된 값이 20보다 큽니다';
+            } else {
+                resultEl.innerText = '입력된 값이 20입니다';
+            }
+        }
+    </script>
+
+    <script>
+        /* 
+        if(조건식){
+            조건이 true 인 경우 실행
+        } else {
+            조건이 false 인 경우 실행
+        }
+        */
+        let a = 10;
+        if(a > 10){
+            console.log("a는 10 보다 크다");
+        } else {
+            console.log("a는 10 보다 작다");
+        }
+    </script>
+</body>
+</html>

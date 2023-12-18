@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex01_script.html</h1>
+    <h2 id="id01"> h2 태그 입니다! </h2>
+    <!--  -->
+    <script>
+        let el = document.getElementById('id01');
+        console.log(el);
+        el.innerText = '';
+
+    </script>
+    <script>
+        // 한줄주석
+        /* 범위
+           주석 */
+
+        // 변수선언
+        // var, let, const
+        var a = 1;
+        console.log(a);
+        a = 10;
+        console.log(a);
+
+        let b = 2;
+        console.log(b);
+        b = 20;
+        console.log(b);
+
+        const c = 3;
+        console.log(c);
+        //c = 30; // 오류
+        console.log(c);
+        console.log('IF문 시작')
+        if( true ){
+            let letVal = 10; // if문 블럭 안에서 선언된 변수
+            console.log('letVal : ' + letVal)
+            var varVal = 20; // if문 블럭 안에서 선언된 변수
+            console.log('varVal : ' + varVal)
+        }
+        console.log('IF문 종료');
+        //console.log('letVal : ' + letVal);
+        console.log('varVal : ' + varVal);
+
+        // let 변수명 = 저장할 내용;
+        let h1El = 1;
+        console.log(typeof h1El);
+        h1El = 'ABCD';
+        console.log(typeof h1El);
+        h1El = 1000;
+        console.log(typeof h1El);
+        h1El = true;
+        console.log(typeof h1El);
+        h1El = document.querySelector('h1');
+        console.log(typeof h1El);
+        console.log(h1El);
+        let arr01 = [11, 'A', true, h1El];
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

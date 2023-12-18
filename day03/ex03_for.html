@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex03_for.html</h1>
+    <div id="forResult">
+
+    </div>
+
+    <div id="whileResult">
+
+    </div>
+    <script>
+        let forEl = document.getElementById('forResult');
+        let whileEl = document.getElementById('whileResult');
+
+       let forText = "";
+        for(let i = 0; i < 5; i++){
+            if(i == 2){
+                continue;
+            }
+            console.log('i : ' + i);
+            forText += 'i : ' + i + '<br>';
+            if(i == 3){
+                break;
+            }
+        }
+        forEl.innerHTML = forText;
+        /*
+        while(반복조건){
+
+        }
+        */
+        let whileText = "";
+        let run = 5;
+        while(run > 0){
+            whileText +=  run +'<br>';
+            console.log(run);
+            run--;
+        }
+        whileEl.innerHTML = whileText;
+    </script>
+</body>
+</html>
