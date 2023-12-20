@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table td{
+            border: 1px solid black;
+        }
+        td{
+            text-align: center;
+            width: 50px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        td:hover{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex05_prevNext.html</h1>
+    <table>
+        <tr>
+            <td>1</td>
+            <td id="td02">2</td>
+            <td>3</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+    <script>
+        const td02 = document.querySelector('#td02');
+        console.log(td02.innerText);
+        console.log("td02의 이전 요소의 텍스트: " 
+                  + td02.previousElementSibling.innerText);
+        console.log("td02의 다음 요소의 텍스트: " 
+                  + td02.nextElementSibling.innerText);
+        console.log('td02의 부모요소 : ' +  td02.parentElement )
+        console.log('td02의 부모요소의 형제요소의 첫번제 자식요소의 텍스트 : ' 
+            +  td02.parentElement.nextElementSibling.firstElementChild.innerText )   ;// 4   
+    </script>
+</body>
+</html>

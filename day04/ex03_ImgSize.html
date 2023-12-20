@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d-none{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>ex03_imgSize.html</h1>
+    <button class="resizeBtn">+10</button>
+    <button class="resizeBtn">-10</button>
+
+    <button onclick="imgSize(200)">width="200"</button>
+    <button onclick="imgSize(500)">width="500"</button>
+
+    <button onclick="imgShowHide()">보이기/숨기기</button>
+    <hr>
+    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA1MTlfMzQg%2FMDAxNjIxNDEzMjQ4NDEz.iztf2puxL8h76jOwr_12U4yLOyV93DvxQ6oux0cN9RUg.Zx3DfDAU1pzKOSOEeX9xeS2ZvmgLSt2UdWF86BtgPr8g.JPEG.sevenn0801%2FJS.jpg&type=sc960_832" 
+         alt="" width="100" >
+    <script>
+        function imgShowHide(){
+            imgEl.classList.toggle('d-none');
+        }
+        /* +10 버튼 클릭 >> img태그의 width 속성의 값을 10 증가 */
+        /* -10 버튼 클릭 >> img태그의 width 속성의 값을 10 감소 */
+        /* 문서 객체에서 .resizeBtn 요소들을 선택 */
+        const btnList = document.querySelectorAll('.resizeBtn');
+        for(let btnEl of btnList){
+            btnEl.addEventListener('click', function(evt){ 
+                let clickBtn = evt.target;
+                if(clickBtn.innerText == '+10'){
+                    imgEl.width += 10;
+                } else {
+                    imgEl.width -= 10;
+                }
+            });
+        }
+    </script>
+
+
+    <script>
+        /* 문서에서 img 태그를 선택 */
+        const imgEl = document.querySelector('img'); 
+        function imgSize(widthVal){
+            imgEl.width = widthVal;
+        }
+    </script>
+
+</body>
+</html>

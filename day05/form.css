@@ -1,0 +1,63 @@
+/* form.css */
+.formContent{
+    width: 500px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formRow{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+.formRow label{
+    width: 100px;
+}
+.formRow input[type='text']{
+    width: 100%;
+    padding: 8px;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+}
+
+.formRow input[type='date']{
+    width: 100%; 
+    font-size: 20px;
+    font-family: auto;
+    padding: 8px;
+    border: 0;
+    outline: none;
+}
+input[type='submit']{
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: skyblue;
+    border-radius: 10px;
+}
+
+.checkMsg{
+    margin: 0;
+    padding-left: 15px;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.errForm{
+    border: 3px solid red !important;
+}
+
+.focusForm{
+    border: 3px solid green;
+}
+#emailId, #emailDomain{
+    width: 145px;
+}

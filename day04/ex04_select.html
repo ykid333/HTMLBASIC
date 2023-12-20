@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex04_select.html</h1>
+
+    <form action="testUrl" method="get">
+        <select name="test">
+            <option value="JAVA">1</option>
+            <option value="ORACLE">2</option>
+            <option value="HTML">3</option>
+            <option value="JS">4</option>
+            <option value="CSS">5</option>
+        </select>
+        <input type="submit" value="전송">
+    </form>
+    <hr>
+    회원가입 >> 이메일주소
+    <br>
+
+    <form action="join" method="get">
+        <input type="text" name="emailId" placeholder="이메일 아이디"> 
+        @ 
+        <input type="text" id="domain" name="emailDomain" placeholder="이메일 도메인">
+        <select onchange="selectDomain(this)">
+            <option value="">직접입력</option>
+            <option value="daum.net">daum</option>
+            <option value="naver.com">naver</option>
+            <option value="google.com">google</option>
+        </select>
+        <br>
+        <input type="submit" value="회원가입">
+    </form>
+
+    <script>
+        function selectDomain(selObj){
+            console.log('selectDomain() 호출');
+            console.log('select태그의 value속성 값 : ' +selObj.value );
+            /* 이메일도메인을 입력하는 input 태그의 value 속성 값을 
+               select 태그의 value 속성값으로 변경 */
+            selObj.previousElementSibling.value = selObj.value;
+            //document.querySelector('#domain').value = selObj.value;
+            
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        .bgSkyblue{
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>ex07_popUp.html</h1>
+    <button onclick="popUp()">팝업창</button>
+
+    <div id="div01">
+        div id="div01"
+    </div>
+
+    <div id="div02">
+        div id="div02"
+    </div>
+
+    <script>
+        function popUp(){
+            /* window.open( URL , 새창이름 , 새창옵션 ); */
+            window.open( 'ex07_popUpChild.html' , 
+                         'popUp01' , 
+                         'width=300, height=500, top=250' );
+        }
+
+        function toggleBg(objId){ // 'div01','div02'
+            document.querySelector('#'+objId).classList.toggle('bgSkyblue');
+        }
+    </script>
+</body>
+</html>

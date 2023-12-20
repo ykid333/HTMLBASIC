@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.mainScreen{
+            border: 5px solid black;
+            width: 150px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .leftDesk{
+            width: 100%;
+            margin-right: 10px;
+        }
+        .rightDesk{
+            width: 100%;
+            margin-left: 10px;
+        }
+        .deskArea{
+            margin-top: 10px;
+            display: flex;
+        }
+        table{
+            margin: 0 auto;
+        }
+        td{
+            width: 120px;
+            height: 80px;
+        }
+        table, td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .btn{
+            cursor: pointer;
+            padding: 20px;
+            display: block;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top: 50px;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .desk{
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainScreen">
+        스크린
+    </div>
+
+    <div class="deskArea">
+
+        <div class="leftDesk">
+            <table>
+                <tr>
+                    <td class="desk">1</td>
+                    <td class="desk">2</td>
+                    <td class="desk">3</td>
+                    <td class="desk">4</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="rightDesk">
+            <table>
+                <tr>
+                    <td class="desk">5</td>
+                    <td class="desk">6</td>
+                    <td class="desk">7</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="desk">8</td>
+                    <td class="desk">9</td>
+                    <td class="desk">10</td>
+                    <td></td>
+                </tr>                
+            </table>
+        </div>
+
+    </div>
+
+    <button class="btn" onclick="randomDesk(this)">자리배치</button>
+
+    <script>
+        let studenList = [ '박채은', '문지원', '홍순호', 
+                           '장정진', '이청관', '이대운', 
+                           '정민재', '김시우', '김홍익', '김윤주' ];
+        let deskList = document.querySelectorAll('.desk');
+
+        function randomDesk(btnObj){
+            console.log('randomDesk() 호출');
+            // 0 ~ 9 사이 값 랜덤으로 발생
+            let randomNumber  = Math.floor( Math.random() * studenList.length) ; // 0.0 ~ 0.9
+            let stuName = studenList.splice(randomNumber, 1)[0];
+            console.log(stuName);
+
+            while(true){
+                let deskRn = Math.floor( Math.random() * deskList.length);
+                let deskEl = deskList[deskRn];
+                let deskNameLength = deskEl.innerText.length;
+                if(deskNameLength != 3 ){
+                    deskEl.innerText = stuName;
+                    break;
+                }
+            }
+            if(studenList.length == 0){
+                btnObj.disabled = true;
+            }
+        }
+    </script>
+
+</body>
+</html>

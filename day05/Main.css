@@ -1,0 +1,46 @@
+/* Main.css */
+div.header, div.navigation, div.contents, div.footer{
+    border: 1px solid black;
+    /* margin-bottom: 5px; */
+    /* padding: 10px; */
+}
+.header{
+    text-align: center;
+    background-color: skyblue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 5px;
+}
+
+.navigation{
+    background-color: black;
+    margin-bottom: 5px;
+}
+.navigation ul{
+    padding: 0px;
+    padding-right: 20px;
+    text-align: right;
+}
+.navigation ul li{
+    display: inline-block;
+    padding: 7px;
+}
+.navigation ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.contents{
+    padding: 10px;
+    min-height: 500px;
+    background-color: bisque;
+    margin-bottom: 5px;
+}
+
+.footer{
+    padding: 20px;
+    text-align: center;
+    background-color: skyblue;
+}

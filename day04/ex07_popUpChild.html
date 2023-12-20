@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex07_popUpChild.html</h1>
+    <button onclick="changeBg('div01')">div01</button>
+
+    <button onclick="changeBg('div02')">div02</button>
+
+    <script>
+        function changeBg(objId){ // 'div01', 'div02'
+            window.opener.toggleBg(objId);
+        }
+
+    </script>
+
+</body>
+</html>

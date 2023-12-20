@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ex06_plusMinus.html</h1>
+    
+    <button onclick="plusMinus(-1)">-</button>
+    <input type="text" id="inputCount"
+           style="width: 30px; text-align: center;" 
+           value="0" readonly>
+    <button onclick="plusMinus(1)">+</button>
+
+    <script>
+        function plusMinus(option) {
+            let inputEl = document.querySelector('#inputCount');
+            inputEl.value = Number(inputEl.value) + option;
+        }
+    </script>
+</body>
+
+</html>
